@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme{ 
+    --color-dagi: teal; 
+}
+
+
+@layer components{
+    .test{
+        @apply text-2xl font-bold underline bg-dagi text-amber-200;
+    }
+}
