@@ -12,6 +12,7 @@ const _schema = {
 const test = sequelize.define('test', _schema, {
   tableName: 'tests',
   timestamps: true,
+  paranoid:true
 });
 
 test.searchColumns = ['name'];
@@ -26,12 +27,20 @@ const base = z.object({
   createdBy: z.coerce.number().int("test Created by must be an integer").positive("test Created by must be positive")
 });
 
+
+
 // Schema for COMPLETE records (including ID)
 const full = base.extend({
   id: z.number().int().positive("test ID must be a positive integer")
 });
 // Schema for UPDATING records
  const updateSchema = base.partial();
+
+
+ test.associate = function (models){
+  test.belongsTo(models.user,  { foreignKey: 'createdBy', targetKey: 'id',as: 'user'});
+}
+
 
 export default {
   model: test,

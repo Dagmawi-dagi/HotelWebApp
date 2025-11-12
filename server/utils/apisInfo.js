@@ -14,7 +14,9 @@ export const API_INFO = {
     "/api/test/post" : { 
         method: 'POST',
         auth: true,
-        restrict:['admin'],
+        restrict:[
+            
+        ],
         fileUpload: [
             {
                 fieldName: 'coverImg',
