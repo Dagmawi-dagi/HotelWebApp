@@ -22,7 +22,7 @@ function toggleDark() {
 
 
 <template>
-    <button @click="toggleDark">
-        toggle dark mode
+    <button @click="toggleDark" className="px-8 py-3 border-2 border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 active:scale-95 transition-all duration-200">
+               toggle dark mode
     </button>
 </template>
