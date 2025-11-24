@@ -4,6 +4,8 @@
 
 <template>
     <nav>
+        <img src="../../assets" alt="Logo" width="100" height="50" />
+        
         <NuxtLink to="/">home</NuxtLink>
         <NuxtLink to="/aboutUs">about us</NuxtLink>
         <NuxtLink to="/contactUs">contact us</NuxtLink>

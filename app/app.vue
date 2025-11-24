@@ -4,10 +4,11 @@
 
 <template>
   <div>
-    <NuxtTime :datetime="Date.now()" />
     <NuxtLoadingIndicator :color="'red'"/>
-    <NavigationsTopNav1/>
+    <!-- <NavigationsTopNav1/> -->
+    <NavigationsTopnav2/>
     <NuxtRouteAnnouncer/>
     <NuxtPage/>
+    <Footer/>
   </div>
 </template>
