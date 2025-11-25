@@ -8,7 +8,7 @@ import { MapPin, ArrowUpRight } from 'lucide-vue-next'
 <template>
   <div class="animate-in fade-in duration-500 bg-white ">
     <!-- Hero Section -->
-    <div class="relative h-[60vh] flex items-center justify-center overflow-hidden pt-7">
+    <div class="relative h-[60vh] flex items-center justify-center overflow-hidden pt-40">
       <div class="absolute inset-0 z-0">
         <img
           src="https://picsum.photos/1920/1080?random=500"

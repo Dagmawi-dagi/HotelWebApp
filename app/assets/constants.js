@@ -140,7 +140,7 @@ const TESTIMONIALS = [
     location: 'New York, USA',
     rating: 5,
     text: "Business and leisure perfectly balanced. The executive suite provided the perfect workspace, while the slopes were just steps away."
-  }
+  },
 ];
 
 const FACILITIES = [

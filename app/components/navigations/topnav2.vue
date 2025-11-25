@@ -2,11 +2,11 @@
 import { ref, onMounted, onUnmounted, defineProps, defineEmits } from 'vue';
 import { Menu, X, Hotel } from 'lucide-vue-next'; // use lucide-vue-next for Vue 3
 
+import { useRouter } from 'vue-router';
+
 const props = defineProps({
   currentPage: null // accept any value
 });
-
-const emit = defineEmits(['navigate']);
 
 const isScrolled = ref(false);
 const isMobileMenuOpen = ref(false);
@@ -24,13 +24,13 @@ onUnmounted(() => {
 });
 
 const PageView = {
-  HOME: 'HOME',
-  ABOUT: 'ABOUT',
-  AMENITIES: 'AMENITIES',
-  DESTINATION: 'DESTINATION',
-  EVENTS: 'EVENTS',
-  CONTACT: 'CONTACT',
-  BOOKING: 'BOOKING'
+  HOME: '/',
+  ABOUT: 'aboutus',
+  AMENITIES: 'amenities',
+  DESTINATION: 'destination',
+  EVENTS: 'events',
+  CONTACT: 'contact',
+  BOOKING: 'booking'
 };
 
 const navItems = [
@@ -42,8 +42,10 @@ const navItems = [
   { label: 'Contact', value: PageView.CONTACT },
 ];
 
+
+const router = useRouter();
 const handleNavClick = (page) => {
-  emit('navigate', page);
+  router.push(page)
   isMobileMenuOpen.value = false;
   window.scrollTo(0, 0);
 };
@@ -52,16 +54,16 @@ const handleNavClick = (page) => {
 <template>
   <nav
     :class="[
-      'fixed w-full z-50 transition-all duration-600',
-      isScrolled ? 'bg-white backdrop-blur-md shadow-md py-4' : 'bg-transparent py-6'
+      'fixed w-full z-50 transition-all duration-600 text-red',
+      isScrolled ? 'bg-white  backdrop-blur-md shadow-md py-4' : 'bg-transparent  py-6'
     ]"
   >
     <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
       <!-- Logo -->
       <div class="flex items-center gap-2 cursor-pointer" @click="handleNavClick(PageView.HOME)">
-        <Hotel :class="['h-8 w-8', isScrolled ? 'text-gold-600' : 'text-stone-800']" />
+        <Hotel :class="['h-8 w-8', isScrolled ? 'text-gold-600' : 'text-white']" />
         <span
-          :class="['text-2xl font-serif font-bold tracking-tight', isScrolled ? 'text-stone-900' : 'text-stone-900']"
+          :class="['text-2xl font-serif font-bold tracking-tight', isScrolled ? 'text-stone-900' : 'text-white']"
         >
           LUMINA
         </span>
@@ -75,7 +77,8 @@ const handleNavClick = (page) => {
           @click="handleNavClick(item.value)"
           :class="[
             'text-sm font-medium tracking-wide uppercase transition-colors hover:text-gold-600',
-            props.currentPage === item.value ? 'text-gold-600 border-b-2 border-gold-600' : 'text-stone-600'
+            props.currentPage === item.value ? 'text-gold-600 border-b-2 border-gold-600' : 'text-stone-600',
+            isScrolled ? 'text-stone-600' : 'text-white',
           ]"
         >
           {{ item.label }}

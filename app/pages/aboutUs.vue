@@ -10,7 +10,7 @@ const team = [
 <template>
   <div class="animate-in fade-in duration-500">
     <!-- Hero -->
-    <div class="bg-stone-900 text-white py-24 text-center">
+    <div class="bg-stone-900 text-white py-24 text-center pt-40">
       <h1 class="text-5xl font-serif mb-4">Our Story</h1>
       <p class="text-stone-400 max-w-xl mx-auto px-6">
         A century of excellence in the heart of the mountains.

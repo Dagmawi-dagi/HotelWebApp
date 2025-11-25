@@ -1,7 +1,7 @@
 <template>
   <div class="animate-in fade-in duration-500 min-h-screen bg-stone-50 pb-20">
     <!-- Header -->
-    <div class="bg-stone-900 text-white py-16 text-center">
+    <div class="bg-stone-900 text-white py-16 text-center pt-40">
       <h1 class="text-4xl font-serif mb-4">Book Your Stay</h1>
 
       <!-- Steps -->

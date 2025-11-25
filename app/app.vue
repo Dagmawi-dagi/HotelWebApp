@@ -4,7 +4,7 @@
 
 <template>
   <div>
-    <NuxtLoadingIndicator :color="'red'"/>
+    <NuxtLoadingIndicator :color="'#Af7436'"/>
     <!-- <NavigationsTopNav1/> -->
     <NavigationsTopnav2/>
     <NuxtRouteAnnouncer/>
