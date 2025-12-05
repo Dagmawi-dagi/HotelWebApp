@@ -30,6 +30,7 @@ const PageView = {
   DESTINATION: 'destination',
   EVENTS: 'events',
   CONTACT: 'contact',
+  CAREERS: 'careers',
   BOOKING: 'booking'
 };
 
@@ -40,6 +41,7 @@ const navItems = [
   { label: 'Destination', value: PageView.DESTINATION },
   { label: 'Events', value: PageView.EVENTS },
   { label: 'Contact', value: PageView.CONTACT },
+  { label: 'CAREERS', value: PageView.CAREERS },
 ];
 
 

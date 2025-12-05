@@ -5,10 +5,9 @@
 <template>
   <div>
     <NuxtLoadingIndicator :color="'#Af7436'"/>
-    <!-- <NavigationsTopNav1/> -->
-    <NavigationsTopnav2/>
     <NuxtRouteAnnouncer/>
-    <NuxtPage/>
-    <Footer/>
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
   </div>
 </template>

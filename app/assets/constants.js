@@ -249,6 +249,31 @@ const ATTRACTIONS = [
     type: "Lifestyle"
   }
 ];
-
+const JOBS = [
+  {
+    id: 'j1',
+    title: 'Senior Sous Chef',
+    department: 'Culinary',
+    type: 'Full-time',
+    location: 'Zermatt, CH',
+    description: 'Assist our Executive Chef in managing the kitchen operations of L\'Etoile. 5+ years fine dining experience required.'
+  },
+  {
+    id: 'j2',
+    title: 'Spa Therapist',
+    department: 'Wellness',
+    type: 'Seasonal',
+    location: 'Zermatt, CH',
+    description: 'Deliver exceptional massage and beauty treatments. Certification in physiotherapy or massage therapy is essential.'
+  },
+  {
+    id: 'j3',
+    title: 'Front Desk Associate',
+    department: 'Guest Services',
+    type: 'Full-time',
+    location: 'Zermatt, CH',
+    description: 'The first point of contact for our guests. Fluency in English, German, and French is highly preferred.'
+  }
+];
 // Exporting for use in other JS modules
-export { ROOMS, EVENTS, TESTIMONIALS, FACILITIES, ATTRACTIONS };
+export { ROOMS, EVENTS, TESTIMONIALS, FACILITIES, ATTRACTIONS,JOBS };
