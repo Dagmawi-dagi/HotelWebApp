@@ -8,6 +8,7 @@ definePageMeta({
 })
 
 const { users,page,perPage } =storeToRefs(useAuthStore())
+const {any_open_modal} = useUtilStore()
 
 try {
   const {  data } = await useFetch('/api/user', {
@@ -80,6 +81,7 @@ useResizableColumns(tableRef, {
     hoverable
     background-even
     selected-key="id"
+    :rounded-size="'sm'"
     :headers="[
       { label:'Doc id', key: 'id', align: 'center', classes: 'selection-column trancate',sortable: true },
       { label:'userName', key: 'userName' ,classes:'trancate'},

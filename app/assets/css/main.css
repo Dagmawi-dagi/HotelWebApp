@@ -1,8 +1,7 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
 
-@theme{ 
+@theme{
     --color-dagi: teal;
     --color-gold-50: #fbf8f1;	/*Very light backgrounds*/ 
     --color-gold-100: #f5edd9;	/*Subtle highlights*/ 

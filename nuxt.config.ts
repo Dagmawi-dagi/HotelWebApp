@@ -12,5 +12,13 @@ export default defineNuxtConfig({
       tailwindcss()
     ]
   },
-
+  mazUi: {
+    theme: {
+      preset: 'maz-ui', // Choose: 'mazUi', 'ocean', 'pristine', 'obsidian'
+      strategy: 'hybrid', // 'runtime' | 'buildtime' | 'hybrid'
+      darkModeStrategy: 'class', // 'class' | 'media' | 'auto'
+      system: false,          // do NOT follow system dark/light preference
+      initial: 'light',       // force initial theme to light
+    }
+  }
 })

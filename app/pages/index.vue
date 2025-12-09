@@ -156,7 +156,7 @@ const goToPage = (page) => emit('navigate', page)
             </div>
 
             <!-- CONTENT -->
-            <div class="p-6 md:p-8 flex-grow flex flex-col">
+            <div class="p-6 md:p-8 grow flex flex-col">
               <h3 class="text-xl font-serif text-stone-900">{{ room.name }}</h3>
               <p class="text-stone-500 text-sm leading-relaxed mb-6">{{ room.description }}</p>
 

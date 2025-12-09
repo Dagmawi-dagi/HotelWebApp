@@ -59,12 +59,13 @@ const sideBarNavs = ref([
 <template>
     <div class="container" :class="{ position:  tablet || mobilePhone , open: sideBarOpen, close: !sideBarOpen  }"  >
       <div class="userContainer" >
-          <MazAvatar :src="`/users/${loggedInUser?.avatar}`" 
+          <MazAvatar :src="  loggedInUser?.avatar ? `/users/${loggedInUser?.avatar}`:null " 
           :caption="loggedInUser?.userName"
           size=".8rem"
           clickable
           loading="eager"
           @click="$router.push({name:'userProfile'})"
+          fallback-src="https://api.dicebear.com/7.x/big-smile/svg?backgroundColor=1d90ff&scale=80&seed=100"
           />
           <img src="" alt="">
           <div class="user" >

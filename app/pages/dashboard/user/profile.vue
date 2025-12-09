@@ -126,7 +126,7 @@ const logout = async()=>{
                                     'nullable',
                                 ]"
                                 field-name="userName"
-                                :default="loggedInUser.userName"
+                                :default="loggedInUser?.userName"
                                 />
                                 <FileElement
                                 name="avatar"
