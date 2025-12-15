@@ -2,7 +2,7 @@
 definePageMeta({
     layout:"dashboard",
     name: 'userProfile',
-    // middleware:['auth']
+    middleware:['auth']
 })
 const tabs = ref(['Account','PhoneNumber','email','Password'])
 const activetab = ref(1)

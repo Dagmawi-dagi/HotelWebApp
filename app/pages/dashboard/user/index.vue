@@ -4,7 +4,7 @@ import { MazTrash,MazPlus,MazPencil } from '@maz-ui/icons'
 definePageMeta({
     layout:"dashboard",
     name: 'users',
-    // middleware:['auth']
+    middleware:['auth']
 })
 
 const { users,page,perPage } =storeToRefs(useAuthStore())

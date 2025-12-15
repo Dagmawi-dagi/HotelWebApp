@@ -4,7 +4,7 @@
 definePageMeta({
   layout:"clean",
   name: 'auth',
-  // middleware:['auth'],
+  middleware:['auth'],
 })
 
 const login = async (data, form$)=>{
@@ -25,7 +25,6 @@ const login = async (data, form$)=>{
   else{
     useRouter().push('/dashboard/').then(()=>{
       useAuthStore().loggedInUser = response.value.data
-        window.localStorage.setItem('token',response.value.token)
     })
   }
 }

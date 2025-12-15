@@ -2,7 +2,7 @@
 definePageMeta({
     layout:"dashboard",
     name: 'createUser',
-    // middleware:['auth']
+    middleware:['auth']
 })
 
 const createNewUser = async (FormD,form$)=>{
