@@ -1,1 +1,1 @@
-Hotel Web App with Nuxt
+# NuxtStarter
