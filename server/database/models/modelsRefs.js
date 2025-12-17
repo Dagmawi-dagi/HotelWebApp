@@ -2,7 +2,7 @@
 import test from './test'
 import user from './user'
 
-import blog from './blog'
+import event from './event'
 import newsletter from './newsletter'
 import newsletterSub from './newsletterSub'
 import vacancyApplication from './vacancyApplication'
@@ -12,7 +12,7 @@ export default {
     test,
     user,
 
-    blog, 
+    event, 
     newsletter,
     newsletterSub,
     vacancy,

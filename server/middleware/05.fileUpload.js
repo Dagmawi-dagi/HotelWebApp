@@ -7,7 +7,7 @@
 // this way we can do validation onthe body even thought the data was formdata
 
 import withErrorHandler from '../utils/catchAsync'
-// import {processImage} from  '@/server/utils/processImage';
+// import {processImage} from  '../../../server/utils/processImage';
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';

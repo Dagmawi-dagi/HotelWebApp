@@ -1,21 +1,20 @@
 import { DataTypes } from 'sequelize';
-import  sequelize  from '../../database/sequelizeConnection';
+import  sequelize  from '../sequelizeConnection';
 import { z } from 'zod';
 
 const _schema = {
   id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
   title: { type:  DataTypes.STRING, allowNull: false,index:true},
-  content_short: { type:  DataTypes.STRING, allowNull: false,index:true},
   content: { type:  DataTypes.TEXT, allowNull: false},
   coverImg: { type:  DataTypes.STRING, allowNull: false},
   category:{
     type: DataTypes.JSON,
     allowNull: false,
     arrayOfStrings: true,
-    allowed: ['info', 'news','social','event'],
+    allowed: ['info', 'news','social','event','entertaiment'],
     validate: {
       isArrayOfAllowedValues(value) {
-        const allowed = ['info', 'news', 'social', 'event'];
+        const allowed = ['info', 'news','social','event','entertaiment'];
         if (!Array.isArray(value)) throw new Error('Category must be an array of strings');
         for (const v of value) {
           if (!allowed.includes(v)) throw new Error(`Invalid value: ${v}`);
@@ -26,25 +25,21 @@ const _schema = {
   createdBy:{ type:  DataTypes.INTEGER, allowNull: false}, // to pass the joi validation
 }
 
-const blog = sequelize.define('blog', _schema, {
-  tableName: 'blogs',
+const event = sequelize.define('event', _schema, {
+  tableName: 'events',
   timestamps: true,
   paranoid: true,     // enables soft delete by adding deletedAt
 });
 
-blog.searchColumns = ['title','content_short','content'];
+event.searchColumns = ['title','content'];
 
 
 // Define allowed categories
-const ALLOWED_CATEGORIES = ['info', 'news', 'social', 'event']
+const ALLOWED_CATEGORIES = ['info', 'news','social','event','entertaiment']
 const base = z.object({
   title: z.string()
     .min(1, "Title is required")
     .max(255, "Title must be less than 255 characters"),
-    
-  content_short: z.string()
-    .min(1, "Short content is required")
-    .max(500, "Short content must be less than 500 characters"),
     
   content: z.string()
     .min(1, "Content is required")
@@ -52,7 +47,7 @@ const base = z.object({
     
   coverImg: z.string()
     .min(1, "Cover image is required")
-    .nonempty("blog cover image is required"),
+    .nonempty("event cover image is required"),
     
   category: z.array(
       z.enum(ALLOWED_CATEGORIES, {
@@ -74,7 +69,7 @@ const base = z.object({
 
 // CRUD Operation Specific Schemas
 const full = base.extend({
-  id: z.number().int().positive("test ID must be a positive integer")
+  id: z.number().int().positive("event ID must be a positive integer")
 });
 // Schema for UPDATING records
  const updateSchema = base.partial();
@@ -82,13 +77,13 @@ const full = base.extend({
 
 //---------- create our relationships--------------//
 
-blog.associate = function (models){
-  blog.belongsTo(models.user,  { foreignKey: 'createdBy', targetKey: 'id',});
+event.associate = function (models){
+  event.belongsTo(models.user,  { foreignKey: 'createdBy', targetKey: 'id',});
 }
 
 
 export default {
-  model: blog,
+  model: event,
   schema : _schema,
   zobSchema: {base,full,updateSchema}
 };

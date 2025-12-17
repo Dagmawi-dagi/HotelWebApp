@@ -2,7 +2,6 @@ import { DataTypes } from 'sequelize';
 import  sequelize  from '../../database/sequelizeConnection';
 import { z } from 'zod';
 
-
 const _schema = {
     id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
     uploaded_files:{
