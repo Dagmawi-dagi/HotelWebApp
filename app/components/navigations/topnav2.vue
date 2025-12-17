@@ -1,5 +1,4 @@
 <script setup lang="js">
-import { ref, onMounted, onUnmounted, defineProps, defineEmits } from 'vue';
 import { Menu, X, Hotel } from 'lucide-vue-next'; // use lucide-vue-next for Vue 3
 
 import { useRouter } from 'vue-router';
