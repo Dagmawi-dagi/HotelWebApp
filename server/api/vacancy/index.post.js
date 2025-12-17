@@ -1,7 +1,7 @@
 import modelsRef from '../../../server/database/models/modelsRefs'
 import { saveFile } from '../../../server/utils/saveFileUpload'
 import withErrorHandler from "../../../server/utils/catchAsync"
-import {commonController} from '../../../server/service/commonCrud.js'
+import {commonController} from '../../../server/service/commonCrud'
 
 export default withErrorHandler( async(event) => {
   const body = event.context.modifiedBody;

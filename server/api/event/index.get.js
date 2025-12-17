@@ -3,7 +3,7 @@ import withErrorHandler from '../../../server/utils/catchAsync'
 import { commonController } from '../../../server/service/commonCrud'
 
 export default withErrorHandler( async(event) => {
- const result =  await commonController(event,modelsRef.blog.model).get()
+ const result =  await commonController(event,modelsRef.event.model).get()
    return{
      status: 'success',
      data: result.rows

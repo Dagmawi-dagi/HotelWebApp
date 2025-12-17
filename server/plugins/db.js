@@ -7,7 +7,7 @@ export default defineNitroPlugin(async (nitroApp) => {
        test: modelsRefs.test.model,
        user: modelsRefs.user.model,
        
-       blog: modelsRefs.blog.model,
+       blog: modelsRefs.event.model,
        newsletter: modelsRefs.newsletter.model,
        newsletterSub: modelsRefs.newsletterSub.model,
        vacancy: modelsRefs.vacancy.model,
